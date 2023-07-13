@@ -1,6 +1,6 @@
 import express from "express";
 
-import * as todoController from "../controllers/todoController";
+import * as todoController from "../controllers/todoController.js";
 export const todoRouter = express.Router();
 
 // GET route for getting all todos
