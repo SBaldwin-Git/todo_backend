@@ -1,7 +1,7 @@
 import { pool } from "../db/db.js";
 
 // Function to get all todos from the database
-export const getTodos = async () => {
+export async function getTodos(){
   // Uses the pool from db.js to query the database
   // and return the results
   // Try and catch block to handle errors
@@ -20,7 +20,7 @@ console.log(await getTodos());
 
 // Function to add a new todo to the database
 
-export const addTodo = async (description) => {
+export async function addTodo(description) {
   // Try and catch block to handle errors
   try {
     // Query the database

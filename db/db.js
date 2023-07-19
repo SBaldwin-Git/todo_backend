@@ -15,3 +15,5 @@ if (!connectionString) {
 
 // Creates a new pool using the connection string and exports it for use in our application
 export const pool = new pg.Pool({ connectionString });
+
+await pool.connect();
