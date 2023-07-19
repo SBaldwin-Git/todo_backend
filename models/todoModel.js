@@ -16,6 +16,8 @@ export const getTodos = async () => {
   }
 };
 
+console.log(await getTodos());
+
 // Function to add a new todo to the database
 
 export const addTodo = async (description) => {

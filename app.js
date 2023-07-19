@@ -1,17 +1,17 @@
 import express from 'express';
-import { todoRouter } from './routes/todoRoute.js';
+import morgan from 'morgan';
+
+import { router } from './routes/todoRoute.js';
 
 const app = express();
 const PORT = process.env.PORT;
 
-app.get('/', (req, res) =>
-{
-    res.send('Hello World!');
-});
+app.use(morgan('dev'));
+app.use(express.static('public'));
+app.use(express.json());
 
-console.log(PORT);
+app.use('/api/todos', router);
+
 app.listen(PORT, function () {
   console.log(`Server listening on port http://localhost:${PORT}`);
 });
-
-export default app;
